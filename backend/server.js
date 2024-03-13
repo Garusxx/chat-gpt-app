@@ -1,16 +1,19 @@
 import express from "express";
 import dotenv from "dotenv";
-import authRouts from "./routes/auth.routes.js";
 
-const app = express();
+import authRouts from "./routes/auth.routes.js";
+import connectToMDB from "./db/connectToMDB.js";
 
 dotenv.config();
+
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!asd");
-});
+app.use(express.json());
 
 app.use("/api/auth", authRouts);
 
-app.listen(PORT, () => console.log("Server running on port " + `${PORT}`));
+app.listen(PORT, () => {
+  connectToMDB();
+  console.log("Server running on port " + `${PORT}`);
+});
