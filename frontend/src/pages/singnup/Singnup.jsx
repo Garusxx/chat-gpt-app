@@ -37,7 +37,7 @@ function SingnUp() {
             </label>
             <input
               type="text"
-              placeholder="John Doe"
+              placeholder="Name"
               className="w-full input input-bordered  h-10"
               value={inputs.fullName}
               onChange={(e) =>
@@ -52,7 +52,7 @@ function SingnUp() {
             </label>
             <input
               type="text"
-              placeholder="johndoe"
+              placeholder="Username"
               className="w-full input input-bordered h-10"
               value={inputs.username}
               onChange={(e) =>
@@ -97,7 +97,7 @@ function SingnUp() {
           />
 
           <Link
-            className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
+            className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block text-red-400"
             to="/login"
           >
             Already have an account?
